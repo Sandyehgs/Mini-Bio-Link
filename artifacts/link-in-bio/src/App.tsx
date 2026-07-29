@@ -31,7 +31,6 @@ const LINKS = [
   {
     id: "trakteer",
     title: "Trakteer",
-    subtitle: "Dukung karya gue di sini",
     icon: TrakteerIcon,
     url: "https://trakteer.id",
     highlight: true,
@@ -39,7 +38,6 @@ const LINKS = [
   {
     id: "twitter",
     title: "Twitter / X",
-    subtitle: "Short form thoughts",
     icon: SiX,
     url: "https://twitter.com",
     highlight: false,
@@ -47,7 +45,6 @@ const LINKS = [
   {
     id: "website",
     title: "Personal Website",
-    subtitle: "Portfolio & blog",
     icon: Globe,
     url: "https://example.com",
     highlight: false,
@@ -143,11 +140,8 @@ function Home() {
               </div>
               
               <div className="flex flex-col flex-1 text-left">
-                <span className={`font-semibold tracking-tight ${link.highlight ? 'text-white' : 'text-white'}`}>
+                <span className="font-semibold tracking-tight text-white">
                   {link.title}
-                </span>
-                <span className={`text-xs mt-0.5 ${link.highlight ? 'text-white/80' : 'text-muted-foreground'}`}>
-                  {link.subtitle}
                 </span>
               </div>
             </motion.a>
