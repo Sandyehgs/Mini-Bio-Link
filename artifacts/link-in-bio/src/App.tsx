@@ -4,8 +4,19 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { motion } from 'framer-motion';
-import { SiTelegram, SiX } from 'react-icons/si';
+import { SiX } from 'react-icons/si';
 import { Globe } from 'lucide-react';
+
+function TrakteerIcon({ className }: { className?: string }) {
+  return (
+    <img
+      src={`${import.meta.env.BASE_URL}trakteer-logo.png`}
+      alt="Trakteer"
+      className={className}
+      style={{ objectFit: 'contain' }}
+    />
+  );
+}
 
 const queryClient = new QueryClient();
 
@@ -18,11 +29,11 @@ const PROFILE = {
 
 const LINKS = [
   {
-    id: "telegram",
-    title: "Telegram Channel",
-    subtitle: "Daily updates & thoughts",
-    icon: SiTelegram,
-    url: "https://telegram.org",
+    id: "trakteer",
+    title: "Trakteer",
+    subtitle: "Dukung karya gue di sini",
+    icon: TrakteerIcon,
+    url: "https://trakteer.id",
     highlight: true,
   },
   {
