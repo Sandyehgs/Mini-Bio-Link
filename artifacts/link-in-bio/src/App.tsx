@@ -4,23 +4,16 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { motion } from 'framer-motion';
-import { SiTelegram, SiGithub, SiX, SiInstagram, SiYoutube, SiTiktok } from 'react-icons/si';
-import { Globe, BadgeCheck, MapPin } from 'lucide-react';
+import { SiTelegram, SiX } from 'react-icons/si';
+import { Globe } from 'lucide-react';
 
 const queryClient = new QueryClient();
 
 // Data
 const PROFILE = {
   name: "Alex Developer",
-  handle: "@alexdev",
   bio: "Building aesthetic digital experiences. Crafting open-source tools and exploring the frontiers of the web.",
-  location: "San Francisco",
   avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&h=256&auto=format&fit=crop",
-  stats: [
-    { label: "Links", value: "7" },
-    { label: "Projects", value: "24" },
-    { label: "Followers", value: "12.5k" }
-  ]
 };
 
 const LINKS = [
@@ -33,43 +26,11 @@ const LINKS = [
     highlight: true,
   },
   {
-    id: "github",
-    title: "GitHub",
-    subtitle: "Open source contributions",
-    icon: SiGithub,
-    url: "https://github.com",
-    highlight: false,
-  },
-  {
     id: "twitter",
     title: "Twitter / X",
     subtitle: "Short form thoughts",
     icon: SiX,
     url: "https://twitter.com",
-    highlight: false,
-  },
-  {
-    id: "instagram",
-    title: "Instagram",
-    subtitle: "Behind the scenes",
-    icon: SiInstagram,
-    url: "https://instagram.com",
-    highlight: false,
-  },
-  {
-    id: "youtube",
-    title: "YouTube",
-    subtitle: "Video essays & tutorials",
-    icon: SiYoutube,
-    url: "https://youtube.com",
-    highlight: false,
-  },
-  {
-    id: "tiktok",
-    title: "TikTok",
-    subtitle: "Bite-sized coding tips",
-    icon: SiTiktok,
-    url: "https://tiktok.com",
     highlight: false,
   },
   {
@@ -123,34 +84,15 @@ function Home() {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <div className="absolute -bottom-1 -right-1 bg-background rounded-full p-1">
-              <BadgeCheck className="w-6 h-6 text-primary fill-primary/20" />
-            </div>
           </div>
           
-          <h1 className="text-2xl font-bold tracking-tight text-white mb-1 flex items-center gap-2">
+          <h1 className="text-2xl font-bold tracking-tight text-white mb-3 flex items-center gap-2">
             {PROFILE.name}
           </h1>
-          <p className="text-primary font-medium text-sm mb-3">{PROFILE.handle}</p>
           
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-[320px] mb-4">
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-[320px] mb-6">
             {PROFILE.bio}
           </p>
-
-          <div className="flex items-center gap-1 text-xs text-muted-foreground/80 font-medium bg-secondary/50 px-3 py-1.5 rounded-full mb-6">
-            <MapPin className="w-3 h-3" />
-            <span>{PROFILE.location}</span>
-          </div>
-
-          {/* Stats Row */}
-          <div className="flex w-full justify-between items-center bg-card/40 border border-border/50 rounded-2xl p-4 mb-2 backdrop-blur-sm">
-            {PROFILE.stats.map((stat, i) => (
-              <div key={i} className="flex flex-col items-center w-1/3">
-                <span className="text-white font-bold text-lg">{stat.value}</span>
-                <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider mt-0.5">{stat.label}</span>
-              </div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Links List */}
