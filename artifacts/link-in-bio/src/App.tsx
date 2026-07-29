@@ -22,9 +22,7 @@ const queryClient = new QueryClient();
 
 // Data
 const PROFILE = {
-  name: "Alex Developer",
-  bio: "Building aesthetic digital experiences. Crafting open-source tools and exploring the frontiers of the web.",
-  avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&h=256&auto=format&fit=crop",
+  avatar: "https://cdn5.telesco.pe/file/Z5OiagkyMizcfiaFLo_YUURI33-sWE_ZWGwcAb6uJGLSFmsHgGI4_u2mhZCr8UBKbGquBArhiqOTOMEg_vvrhOXNSjpQd1gFo45mzQdY484NCyQ_60u8MuroKJ5RKJRl-Jz7AlQKbbLg7_1oNcSa_YLAUIhv52roK5eTPO2ic2H32MNQgmPQnd-4GFxxAZhiqWWfstJTTJ4lck3QPfKS7CUdKzdcIEPIBStWORQ-wydNBt2btqIwnZJRK4CN8Xrn9tsp-f6uTv360bjTUh19wslA4mGrVBfy4RTqNt8JcLJxu0wH19oWmbfRC_m9SzRaWe6aNuHR9uX3CM1Chkw1wg.jpg",
 };
 
 const LINKS = [
@@ -84,23 +82,15 @@ function Home() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center text-center mb-8 w-full"
         >
-          <div className="relative mb-4">
+          <div className="relative mb-8">
             <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 p-1 shadow-lg shadow-primary/10">
               <img 
                 src={PROFILE.avatar} 
-                alt={PROFILE.name} 
+                alt="Profile"
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
           </div>
-          
-          <h1 className="text-2xl font-bold tracking-tight text-white mb-3 flex items-center gap-2">
-            {PROFILE.name}
-          </h1>
-          
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-[320px] mb-6">
-            {PROFILE.bio}
-          </p>
         </motion.div>
 
         {/* Links List */}
